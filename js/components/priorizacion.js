@@ -48,9 +48,9 @@ Vue.component('priorizacion', {
             <div class="my-2 p-4 instruct" style="" v-html="data1.instrucciones"></div>
             <div >
                 <span class="prior-text" >{{data1.dato.nombre}}</span>
-                <button class="help1" @click="showingDesc = !showingDesc">?</button>
+                <!--<button class="help1" @click="showingDesc = !showingDesc">?</button>-->
             </div>
-            <div class="row mb-4" v-if="showingDesc">
+            <div class="row mb-4" v-if="1 || showingDesc">
                 <span style="font-style:italic" class="desc1" v-html="data1.dato.descripcion"></span>
             </div>
             <div v-for="cmp,i of data1.opciones" class="row mt-2">
