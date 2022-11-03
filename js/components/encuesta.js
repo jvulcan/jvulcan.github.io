@@ -117,7 +117,8 @@ Vue.component('encuesta', {
                 const txtBLOB = new Blob([dataS], {type: 'text/javascript'});
                 var d = "";
                 globalThis.app.priorizaciones.forEach(element => {
-                    d += element.respuesta.id.substr(1);
+                    if (element.respuesta.id.startsWith("D"))
+                        d += element.respuesta.id.substr(1);
                 });
                 const sFileName = data.nombre+"_D"+d+".json";
 
