@@ -20,9 +20,6 @@ Vue.component('encuesta', {
         </div>
     </div>`,
     computed: {
-        AllGood(){
-
-        }
     },
     methods: {
         start(elemId)
