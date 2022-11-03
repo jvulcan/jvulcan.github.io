@@ -56,6 +56,10 @@ Vue.component('priorizacion', {
             <div v-for="cmp,i of data1.opciones" class="row mt-2">
                 <div class="col-md-6">
                     <span class="prior-text" style="font-weight:normal;">{{cmp.nombre}}</span>
+                    <button class="help1" @click="ToggleDesc(i)">?</button>
+                    <div class="row" v-if="showingDescs[i].a">
+                        <span style="font-style:italic" class="desc1" v-html="cmp.descripcion"></span>
+                    </div>
                 </div>
                 <div class="col-md-6" style="font-size:22px;">
                     <select class="form-select" v-model="data1.respuesta.datos[i]">
