@@ -58,7 +58,7 @@ Vue.component('priorizacion', {
                     <span class="prior-text" style="font-weight:normal;">{{cmp.nombre}}</span>
                     <!--<button class="help1" @click="ToggleDesc(i)">?</button>-->
                     <div class="row" v-if="1 || showingDescs[i].a">
-                        <span style="font-style:italic" class="desc1" v-html="cmp.descripcion"></span>
+                        <span style="font-style:italic" class="" v-html="cmp.descripcion"></span>
                     </div>
                 </div>
                 <div class="col-md-6" style="font-size:22px;">
@@ -66,6 +66,7 @@ Vue.component('priorizacion', {
                         <option v-for="op of data1.escala" :value="op.valor">{{op.nombre}}</option>
                     </select>
                 </div>
+                <hr>
             </div>
         </div>
         
