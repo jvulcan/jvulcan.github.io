@@ -24,11 +24,11 @@ Vue.component('priorizacion', {
                 <div class="row">
                     <div class="col-sm-10 text-center">
                         <span class="prior-text" style="font-weight:normal;">{{cmp.nombre}}</span>
-                        <button class="help1" @click="ToggleDesc(i)">?</button>
+                        <!--<button class="help1" @click="ToggleDesc(i)">?</button>-->
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
-                <div class="row" v-if="showingDescs[i].a">
+                <div class="row" v-if="1 || showingDescs[i].a">
                     <span style="font-style:italic" class="desc1" v-html="cmp.descripcion"></span>
                 </div>
                 <div class="row">
@@ -56,8 +56,8 @@ Vue.component('priorizacion', {
             <div v-for="cmp,i of data1.opciones" class="row mt-2">
                 <div class="col-md-6">
                     <span class="prior-text" style="font-weight:normal;">{{cmp.nombre}}</span>
-                    <button class="help1" @click="ToggleDesc(i)">?</button>
-                    <div class="row" v-if="showingDescs[i].a">
+                    <!--<button class="help1" @click="ToggleDesc(i)">?</button>-->
+                    <div class="row" v-if="1 || showingDescs[i].a">
                         <span style="font-style:italic" class="desc1" v-html="cmp.descripcion"></span>
                     </div>
                 </div>
