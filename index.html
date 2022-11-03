@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+
+    <script src="js/dataES.js" type="text/javascript"></script>
+    <script src="js/bootstrap/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="js/vue.min.js" type="text/javascript"></script>
+    <script src="js/components/priorizacion.js" type="text/javascript"></script>
+    <script src="js/components/estructura.js" type="text/javascript"></script>
+    <script src="js/components/encuesta.js" type="text/javascript"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="text-center">
+            <div style="font-size:32px;font-weight:bold;">Encuesta de priorización de los componentes de cada dominio de desempeño (PMBOK 7° edición) y su impacto en las estrategias organizacionales</div>
+        </div>
+        <!--<div class="mt-4 px-2 py-2" v-html="estructura.instrucciones.general" style="border: 1px solid #000;border-radius: 15px;background:#fff;">
+        </div>-->
+        <!--<div class="mt-4">
+            <priorizacion :data1="priorizaciones[1]"/>
+        </div>-->
+        <encuesta :data1="priorizaciones[1]" :struct="estructura" :tareas="priorizaciones"></encuesta>
+    </div>
+    <script src="js/script_normal.js" type="text/javascript"></script>
+    <script>
+        app.Init( estructura, ["D1", "D2"] );
+    </script>
+</body>
+</html>
