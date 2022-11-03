@@ -16,10 +16,10 @@ const estructura =
         { nombre: "Alto", valor: 1 }
     ],
     estrategia: [
-        { id: "E1", nombre:"Crecimiento & Rentabilidad", descripcion:"Aumento del márgen de beneficio económico" },
+        { id: "E1", nombre:"Rentabilidad", descripcion:"Aumento del márgen de beneficio económico" },
         { id: "E2", nombre:"Eficiencia & Productividad", descripcion:"Optimización de recursos y disminución de costos" },
-        { id: "E3", nombre:"Personas (Motivación y Alto rendimiento)", descripcion:"Aumento en los índices de satisfacción global de los empleados" },
-        { id: "E4", nombre:"Cliente (Entrega de valor)", descripcion:"Aumento en los índices de satisfacción global de los clientes" }
+        { id: "E3", nombre:"Personas", descripcion:"Aumento en los índices de satisfacción global de los empleados" },
+        { id: "E4", nombre:"Cliente", descripcion:"Aumento en los índices de satisfacción global de los clientes" }
     ],
     dimensiones: [
         { 
