@@ -5,7 +5,7 @@ Vue.component('encuesta', {
         `
     <div>
         <div v-if="item == null">
-            <estructura :datos="struct" :tareas="tareas" v-on:evaluate="start"></estructura>
+            <estructura v-if="struct != null" :datos="struct" :tareas="tareas" v-on:evaluate="start"></estructura>
             <div class="row mt-4">
                 <div class="col-md-12 text-center">
                     <input type="text" id="txtN" placeholder="Ingrese nombre"/>

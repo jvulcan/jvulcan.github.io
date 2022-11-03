@@ -74,7 +74,7 @@ Vue.component('estructura', {
                         
                         </div>
                     </td>
-                    <td v-for="est of datos.estrategia">
+                    <td v-if="datos != null" v-for="est of datos.estrategia">
                         <div v-if="Completo(met.metodo.id)">
                             <b>{{GetEvalValue(met.metodo.id, est.id, "_")}}</b>
                         </div>
@@ -86,6 +86,9 @@ Vue.component('estructura', {
     </div>`,
     computed: {
         GetMetodos(){
+            if (this.datos == null)
+                return [];
+                
             var metodos = [];
 
             var dims = [];
