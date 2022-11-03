@@ -1,7 +1,7 @@
 const estructura =
 {
     instrucciones: {
-        dimensiones: "A continuación, deslize las barras para determinar la proporción de impacto en la madurez de cada ítem",
+        dimensiones: "A continuación, deslize las barras para determinar la proporción de impacto en la madurez de cada componente",
         intro_dimensiones: "El propósito de la encuesta es determinar las prioridades de los componentes más relevantes de cada dominio de desempeño, e inferir el nivel de impacto en el aporte a la madurez de la gestión de proyectos.<br>\
         Cada dominio está dividido en componentes relevantes claves para el éxito de los proyectos, sin embargo y según la experiencia y conocimiento de los profesionales que respondan la encuesta, se busca evaluar la proporcionalidad de aporte en valor del componente a la madurez en la gestión de proyectos.",
         intro_estrategia: "El propósito de la encuesta es determinar el nivel de impacto que tiene cada uno de los componentes de los dominios de desempeño sobre las dimensiones genéricas de una estrategia organizacional. ( Rentabilidad, eficiencia & productividad, Personas, Clientes)<br>\
