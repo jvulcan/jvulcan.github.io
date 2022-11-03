@@ -1,5 +1,5 @@
 Vue.component('encuesta', {
-    props: ['data1', 'struct', 'tareas'],
+    props: ['struct', 'tareas'],
     template:
     /*html*/
         `
