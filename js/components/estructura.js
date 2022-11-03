@@ -27,7 +27,7 @@ Vue.component('estructura', {
         <table class="table table-bordered" style="border:0px solid #000">
             <thead class="table-primary">
                 <th style="border:1px solid black;border-collapse:collapse;">Dominios de Desempeño PMBOK</th>
-                <th style="border:1px solid black;border-collapse:collapse;">Ítems relevantes del Dominio</th>
+                <th style="border:1px solid black;border-collapse:collapse;">Componentes relevantes del Dominio</th>
                 <th style="border:1px solid black;border-collapse:collapse;"></th>
                 <th style="border:1px solid black;border-collapse:collapse;" v-if="datos != null" v-for="es of datos.estrategia">
                     {{es.nombre}}
