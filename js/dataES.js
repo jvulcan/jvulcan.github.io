@@ -3,9 +3,9 @@ const estructura =
     instrucciones: {
         dimensiones: "A continuación, deslize las barras para determinar la proporción de impacto en la madurez de cada componente",
         intro_dimensiones: "El propósito de la encuesta es determinar las prioridades de los componentes más relevantes de cada dominio de desempeño, e inferir el nivel de impacto en el aporte a la madurez de la gestión de proyectos.<br>\
-        Cada dominio está dividido en componentes relevantes claves para el éxito de los proyectos, sin embargo y según la experiencia y conocimiento de los profesionales que respondan la encuesta, se busca evaluar la proporcionalidad de aporte en valor del componente a la madurez en la gestión de proyectos.",
-        intro_estrategia: "El propósito de la encuesta es determinar el nivel de impacto que tiene cada uno de los componentes de los dominios de desempeño sobre las dimensiones genéricas de una estrategia organizacional. ( Rentabilidad, eficiencia & productividad, Personas, Clientes)<br>\
-        Para mejorar la presición de su respuesta, considerar revisar los signos de interrogación en amarillo, donde encontrará un breve resumen del resultado esperado del componente.",
+        Cada dominio está dividido en componentes relevantes claves para el éxito de los proyectos, sin embargo y según la experiencia y conocimiento de los profesionales que respondan la encuesta, se busca evaluar la proporcionalidad de aporte en valor del componente a la madurez en la gestión de proyectos.<br>\
+        Considerar revisar el signo de interrogación en amarillo, donde encontrará un breve resumen del Dominio de Desempeño a evaluar.",
+        intro_estrategia: "El propósito de la encuesta es determinar el nivel de impacto que tiene cada uno de los componentes de los dominios de desempeño sobre las dimensiones genéricas de una estrategia organizacional. ( Rentabilidad, eficiencia & productividad, Personas, Clientes)",
         estrategia: "Para cada componente del dominio de desempeño, elija entre las alternativas (muy bajo, bajo, medio, alto, muy alto)  para determinar según su experiencia y conocimiento, cuál es el impacto que dicho componente tiene frente a las dimensiones estratégicas de una organización."
     },
     escala: [
