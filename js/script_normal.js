@@ -25,6 +25,15 @@ var app = new Vue({
             var list = [];
             params.forEach(element => {
                 list.push(this2.GetElement(element));
+                if (list[list.length-1].id.startsWith("D"))
+                {
+                    var e = list[list.length-1];
+                    console.log(e);
+                    for (let j = 0; j < e.metodos.length; j++) {
+                        const met = e.metodos[j];
+                        list.push(met);
+                    }
+                }
             });
 
             var dimensiones = [];
