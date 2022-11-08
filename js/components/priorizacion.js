@@ -4,75 +4,190 @@ Vue.component('priorizacion', {
     /*html*/
         `
     <div>
-        <div class="mt-4 px-2 py-2" v-html="data1.intro" 
-            style="border: 1px solid #000;border-radius: 15px;background:#fff;">
-        </div>
         <div v-if="data1.tipo == 'prop'">
-            <div class="my-4 p-3 instruct" style="" v-html="data1.instrucciones"></div>
-            <div>
+            <div class="mt-4">
                 <div class="text-center">
-                    <span class="prior-text" style="font-size:2em;">{{data1.dato.nombre}}</span>
-                    <button class="help1" @click="showingDesc = !showingDesc">?</button>
+                    <div style="font-size:32px;font-weight:bold;">
+                        Encuesta de Priorización Componentes de los Dominios de Desempeño PMBOK 7
+                    </div>
                 </div>
-                
-                <div v-if="showingDesc" class="mb-4">
-                    <div style="font-style:italic;padding-left:10px;padding-right:10px;" class="desc1" 
-                        v-html="data1.dato.descripcion"></div>
+            </div>
+            <div class="mt-4 px-2 py-2" v-html="data1.intro" 
+                style="border: 1px solid #000;border-radius: 15px;background:#fff;">
+            </div>
+            <div class="my-4 p-3 instruct" style="text-decoration:none;">
+                A continuación, deslice las barras para determinar dicha proporción de importancia del componente sobre 
+                la madurez del dominio destacado en amarillo. <b>(Presionar </b> 
+                <img src="img/Imagen3.png" style="position:relative;width:30px;height:40px;"/>
+                <b>para visualizar reseña del dominio)</b>
+            </div>
+            <div class="mt-5">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="mt-1 col-sm-9">
+                                <div class="section bg-yellow">
+                                    DOMINIO DE DESEMPEÑO
+                                </div>
+                            </div>
+                            <div class="mt-1 col-sm-3">
+                                <img src="img/Imagen2.png" style="width:40px;height:40px;"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="">
+                            <span class="section bg-yellow prior-text1" style="font-size:2em;">{{data1.dato.nombre}}</span>
+                            <button class="help2" @click="showingDesc = !showingDesc">i</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div v-if="showingDesc" class="mb-4">
+                            <div style="font-style:italic;padding-left:10px;padding-right:10px;" class="desc1" 
+                                v-html="data1.dato.descripcion"></div>
+                        </div>  
+                    </div>
                 </div>
             </div>
             <div v-for="cmp,i of data1.opciones" class="row mt-4">
                 <div class="row">
-                    <div class="col-sm-10 text-center">
-                        <span class="prior-text" style="font-weight:normal;">{{cmp.nombre}}</span>
-                        <!--<button class="help1" @click="ToggleDesc(i)">?</button>-->
+                    <div class="col-sm-2">
+                        <div class="row">
+                            <div class="mt-1 col-sm-9">
+                                <div class="section bg-blue">
+                                    COMPONENTE {{cmp.num}}
+                                </div>
+                            </div>
+                            <div class="mt-1 col-sm-3">
+                                <img src="img/Imagen1.png" style="width:40px;height:40px;"/>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-2"></div>
-                </div>
-                <div class="row" v-if="1 || showingDescs[i].a">
-                    <span style="font-style:italic" class="desc1" v-html="cmp.descripcion"></span>
-                </div>
-                <div class="row">
-                    <div class="col-sm-10">
-                        <input class="form-range1" type="range" min="0" max="100" step="1" 
-                            v-model="data1.respuesta.datos[i]" style="width:100%;height:100%" 
+                    <div class="col-sm-9">
+                        <span class="prior-text" style="font-weight:normal;">{{cmp.nombre}}</span>
+                        <div v-if="1 || showingDescs[i].a">
+                            <div style="font-style:italic" class="desc1" v-html="cmp.descripcion"></div>
+                        </div>
+                        <input class="form-range1 my-2" type="range" min="0" max="100" step="1" 
+                            v-model="data1.respuesta.datos[i]" style="width:100%;" 
                             :id="'slider'+i" v-on:change="UpdateVal" />
                     </div>
-                    <div class="col-sm-2 text-center">
-                        <input type="text" disabled class="pct-num" :value="GetStartValue" :id="'num'+i" 
-                            style="text-align:center;font-weight:bold;color:black;"/>
+                    <div class="col-sm-1">
+                        <input type="text" disabled class="pct-num pt-3" :value="GetStartValue" :id="'num'+i" 
+                            style="text-align:center;font-weight:bold;color:black;font-size:36px;"/>
                     </div>
                 </div>
+                <hr>
             </div>
         </div>
         <div v-else-if="data1.tipo == 'escala'">
-            <div class="my-2 p-4 instruct" style="" v-html="data1.instrucciones"></div>
-            <div >
-                <span class="prior-text" >{{data1.dato.nombre}}</span>
-                <!--<button class="help1" @click="showingDesc = !showingDesc">?</button>-->
-            </div>
-            <div class="row mb-4" v-if="1 || showingDesc">
-                <span style="font-style:italic" class="desc1" v-html="data1.dato.descripcion"></span>
-            </div>
-            <div v-for="cmp,i of data1.opciones" class="row mt-2">
-                <div class="col-md-6">
-                    <span class="prior-text" style="font-weight:normal;">{{cmp.nombre}}</span>
-                    <!--<button class="help1" @click="ToggleDesc(i)">?</button>-->
-                    <div class="row" v-if="1 || showingDescs[i].a">
-                        <span style="font-style:italic" class="" v-html="cmp.descripcion"></span>
+            <div>
+                <div class="mt-4">
+                    <div class="text-center">
+                        <div style="font-size:32px;font-weight:bold;">
+                        Encuesta de Impacto de los Componentes de los Dominios de Desempeño en Dimensiones Genéricas de una Estrategia organizacional
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6" style="font-size:22px;">
-                    <select class="form-select" v-model="data1.respuesta.datos[i]">
-                        <option v-for="op of data1.escala" :value="op.valor">{{op.nombre}}</option>
-                    </select>
+                <div class="mt-4 px-2 py-2" v-html="data1.intro" 
+                    style="border: 1px solid #000;border-radius: 15px;background:#fff;">
                 </div>
-                <hr>
+                <div class="my-2 p-3 instruct mb-5" style="" v-html="data1.instrucciones"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="row">
+                        <div class="mt-1 col-sm-9">
+                            <div class="section bg-blue">
+                                COMPONENTE {{data1.dato.num}}
+                            </div>
+                        </div>
+                        <div class="mt-1 col-sm-3">
+                            <img src="img/Imagen1.png" style="width:40px;height:40px;"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <span class="prior-text">{{data1.dato.nombre}}</span>
+                    <div style="font-style:italic" class="desc1" v-html="data1.dato.descripcion"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <table style="width:100%;max-height:100%">
+                        <tr>
+                            <td style="width:75%">
+                                
+                                <table style="width:100%;height:100%">
+                                    <tbody>
+                                        <tr>
+                                            <td class="p-3" style="background:rgb(197,90,17);color:white;text-align:center;vertical-align:middle">
+                                            DIMENSIONES ESTRATÉGICAS
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                            </td>
+                            <td style="width:25%">
+                                <!--
+                                <table style="width:100%;height:100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <img src="img/Imagen4.png" style="width:40px;height:40px;"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="img/Imagen4.png" style="width:40px;height:40px;"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="img/Imagen4.png" style="width:40px;height:40px;"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="img/Imagen4.png" style="width:40px;height:40px;"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                -->
+                                <img src="img/Imagen5.png" style="height:100%;"/>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <!--<div style="text-align:center;vertical-align:middle;display:table-cell;height:95%;width:90%;;color:white;">
+                        
+                    </div>-->
+                </div>
+                <div class="col-md-9">
+                    <div v-for="cmp,i of data1.opciones" class="row mt-2">
+                        <div class="col-md-6">
+                            <span class="prior-text" style="font-weight:normal;">{{cmp.nombre}}</span>
+                            <div class="row" v-if="1 || showingDescs[i].a">
+                                <span style="font-style:italic" class="" v-html="cmp.descripcion"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="font-size:22px;">
+                            <select class="form-select" v-model="data1.respuesta.datos[i]">
+                                <option v-for="op of data1.escala" :value="op.valor">{{op.nombre}}</option>
+                            </select>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
             </div>
         </div>
         
         <div class="row">
             <div class="col-md-12 text-center">
-                <button class="btn btn-primary mt-4" style="font-size:2rem;" @click="$emit('endEval')">Terminar</button>
+                <button class="btn btn-primary my-4" style="font-size:2rem;" @click="$emit('endEval')">{{GetFinishText()}}</button>
             </div>
         </div>
     </div>`,
@@ -82,6 +197,9 @@ Vue.component('priorizacion', {
         }
     },
     methods: {
+        GetFinishText(){
+            return globalThis.app.finished ? "Terminar" : "Siguiente";
+        },
         ToggleDesc(i){
             this.showingDescs[i].a = !this.showingDescs[i].a;
             return this.showingDescs[i].a;

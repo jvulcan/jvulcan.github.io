@@ -1,5 +1,5 @@
 Vue.component('encuesta', {
-    props: ['struct', 'tareas'],
+    props: ['struct', 'tareas', 'item'],
     template:
     /*html*/
         `
@@ -49,10 +49,22 @@ Vue.component('encuesta', {
                 this.item.respuesta.completo = completed;
             }
 
-            if (globalThis.app.prior_actual < this.tareas.length && this.tareas[globalThis.app.prior_actual].dato.id == this.item.dato.id)
+            if (!globalThis.app.finished && 
+                globalThis.app.prior_actual < (this.tareas.length-1) && 
+                this.tareas[globalThis.app.prior_actual].dato.id == this.item.dato.id)
+            {
                 globalThis.app.prior_actual++;
-
-            this.item = null;
+                this.item = this.tareas[globalThis.app.prior_actual];
+                this.item.visitado = true;
+                //this.start(this.tareas[globalThis.app.prior_actual].respuesta.id);
+            }
+            else
+            {
+                globalThis.app.prior_actual = this.tareas.length;
+                globalThis.app.finished = true;
+                this.item = null;
+            }
+                
         },
         EncuestaCompleta()
         {
@@ -148,7 +160,7 @@ Vue.component('encuesta', {
     },
     data() {
         return {
-            item: null
+            item1: null
         }
     },
 });

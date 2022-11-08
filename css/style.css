@@ -524,12 +524,22 @@ input[type='radio']:checked + label:before, input[type='radio']:checked + .label
     border-radius: 5px;
     border:1px solid #000;
 }
+.help2 {
+    background-color: rgb(237,125,49);
+    border-radius: 50%;
+    color:white;
+    font-size:20px;
+    width:2.25rem;
+    height:2.25rem;
+    position:relative;
+    top:-18px;
+    left:-10px;
+}
 .desc1{
     background:rgba(0,0,255,0.05);
     border:1px solid #000;
     border-radius: 10px;
-    padding-top:5px;
-    padding-bottom:5px;
+    padding:5px;
     color:#333 !important;
 }
 .disabled{
@@ -538,4 +548,17 @@ input[type='radio']:checked + label:before, input[type='radio']:checked + .label
 .instruct{
     border:1px solid #000;font-style:italic;text-decoration:underline;font-size:20px;
     color:#000;
+}
+.section{
+    padding:0.25rem !important;
+    border:1px solid #000;
+    border-radius:5px;
+}
+.bg-blue{
+    background:rgb(68,114,196);
+    color:white;
+}
+.bg-yellow{
+    background:yellow;
+    color:black;
 }

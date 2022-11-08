@@ -9,7 +9,8 @@ var app = new Vue({
             config: {
                 showUnused: false,
                 putFirstUsed: true
-            }
+            },
+            finished: false
         }
     },
     computed: {
@@ -30,32 +31,36 @@ var app = new Vue({
             var estrategias = [];
             list.forEach(el => {
 
-                var n = { 
-                    tipo: "prop", 
-                    dato: el,
-                    opciones : el.metodos, 
-                    instrucciones: this.estructura.instrucciones.dimensiones,
-                    intro: this.estructura.instrucciones.intro_dimensiones,
-                    visitado: false,
-                    respuesta: {id: el.id, datos: this.CreateAnswers(el.metodos, 50.0), completo: false}
-                };
-                dimensiones.push(n);
-                this2.priorizaciones.push(n);
-
-                el.metodos.forEach(el2 => {
+                if (el.id.startsWith("D"))
+                {
+                    var n = { 
+                        tipo: "prop", 
+                        dato: el,
+                        opciones : el.metodos, 
+                        instrucciones: this.estructura.instrucciones.dimensiones,
+                        intro: this.estructura.instrucciones.intro_dimensiones,
+                        visitado: false,
+                        respuesta: {id: el.id, datos: this.CreateAnswers(el.metodos, 50.0), completo: false}
+                    };
+                    dimensiones.push(n);
+                    this2.priorizaciones.push(n);
+                }
+                else if (el.id.startsWith("M"))
+                {
                     var n2 = { 
                         tipo: "escala", 
-                        dato: el2,
+                        dato: el,
                         escala: this2.estructura.escala,
                         opciones: this2.estructura.estrategia, 
                         instrucciones: this.estructura.instrucciones.estrategia,
                         intro: this.estructura.instrucciones.intro_estrategia,
                         visitado: false,
-                        respuesta: {id: el2.id, datos: this.CreateAnswers(this2.estructura.estrategia, 0.0), completo: false}
+                        respuesta: {id: el.id, datos: this.CreateAnswers(this2.estructura.estrategia, 0.0), completo: false}
                     };
                     estrategias.push(n2);
                     this2.priorizaciones.push(n2);
-                });
+                }
+
             });
         },
         GetElement(id)
@@ -64,6 +69,21 @@ var app = new Vue({
                 return this.estructura.dimensiones.find(n => n.id == id);
             else if (id.startsWith("E"))
                 return this.estructura.estrategia.find(n => n.id == id);
+            else if (id.startsWith("M"))
+            {
+                var found = null;
+                for (let i = 0; i < this.estructura.dimensiones.length; i++) {
+                    const dim = this.estructura.dimensiones[i];
+                    
+                    var find = dim.metodos.find(m => m.id == id);
+                    if (find != undefined && find != null)
+                    {
+                        found = find;
+                        break;
+                    }
+                }
+                return found;
+            }
         },
         CreateAnswers(d1, defaultValue = null){
             var nn = [];

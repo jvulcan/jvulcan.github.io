@@ -9,9 +9,6 @@ Vue.component('estructura', {
                 <div class="col-md-9" style="border: 1px solid #000">
                     <div><b>Instrucciones:</b></div>
                     <ul>
-                        <li>Todos los dominios y componentes de éstos que puede visualizar <b>deben</b> ser evaluados.</li>
-                        <li>El ítem que se debe evaluar estará en estado Pendiente (ver Leyenda), haga click sobre éste para comenzar la evaluación.</li>
-                        <li>Una vez que termine la evaluación de ese ítem haga click en Terminar para volver al Inicio. Un nuevo ítem aparecerá en estado Pendiente y el anterior tomará estado Completo o Incompleto (Ver Leyenda).</li>
                         <li>Puede volver a evaluar un ítem pasado (Completo o Incompleto) y actualizar la evaluación.</li>
                         <li>Cuando todos los ítems estén en estado Completo, ingrese su nombre abajo y haga click en Terminar. 
                             Se le abrirá una ventana para guardar un archivo, guárdelo en su ordenador y envíelo al coordinador de esta encuesta (Cristián Domínguez).</li>
@@ -19,10 +16,6 @@ Vue.component('estructura', {
                 </div>
                 <div style="border:1px solid #000;" class="col-md-3">
                     <div><b>Leyenda:</b></div>
-                    <div style="width:200px;" class="p-2">
-                        <span class="badge bg-primary">&nbsp;&nbsp;&nbsp;</span>
-                        Pendiente
-                    </div>
                     <div style="width:200px;" class="p-2">
                         <span class="badge bg-warning">&nbsp;&nbsp;&nbsp;</span>
                         Incompleto
