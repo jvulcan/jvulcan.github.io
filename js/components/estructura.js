@@ -4,11 +4,18 @@ Vue.component('estructura', {
     /*html*/
         `
     <div>
+        <div class="mt-4">
+            <div class="text-center">
+                <div style="font-size:32px;font-weight:bold;">
+            Resultados de la Encuesta
+                </div>
+            </div>
+        </div>
         <div class="my-4">
             <div class="row">
-                <div class="col-md-9" style="border: 1px solid #000">
+                <div class="col-md-9" style="border: 1px solid #000; color:black; font-size:20px;">
                     <div><b>Instrucciones:</b></div>
-                    <ul>
+                    <ul style="list-style:disc;">
                         <li>Puede volver a evaluar un ítem pasado (Completo o Incompleto) y actualizar la evaluación.</li>
                         <li>Cuando todos los ítems estén en estado Completo, ingrese su nombre abajo y haga click en Terminar. 
                             Se le abrirá una ventana para guardar un archivo, guárdelo en su ordenador y envíelo al coordinador de esta encuesta (Cristián Domínguez).</li>

@@ -49,7 +49,7 @@ Vue.component('priorizacion', {
                     </div>
                 </div>
             </div>
-            <div v-for="cmp,i of data1.opciones" class="row mt-4">
+            <div v-for="cmp,i of data1.opciones" class="row mt-5">
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="row">
@@ -64,9 +64,11 @@ Vue.component('priorizacion', {
                         </div>
                     </div>
                     <div class="col-sm-9">
-                        <span class="prior-text" style="font-weight:normal;">{{cmp.nombre}}</span>
-                        <div v-if="1 || showingDescs[i].a">
-                            <div style="font-style:italic" class="desc1" v-html="cmp.descripcion"></div>
+                        <div style="border:1px solid #000">
+                            <div class="prior-text px-2" style="font-weight:normal;">{{cmp.nombre}}</div>
+                            <div v-if="1 || showingDescs[i].a">
+                                <div style="font-style:italic" class="desc1" v-html="cmp.descripcion"></div>
+                            </div>
                         </div>
                         <input class="form-range1 my-2" type="range" min="0" max="100" step="1" 
                             v-model="data1.respuesta.datos[i]" style="width:100%;" 
@@ -77,7 +79,7 @@ Vue.component('priorizacion', {
                             style="text-align:center;font-weight:bold;color:black;font-size:36px;"/>
                     </div>
                 </div>
-                <hr>
+                <!--<hr>-->
             </div>
         </div>
         <div v-else-if="data1.tipo == 'escala'">
@@ -92,7 +94,7 @@ Vue.component('priorizacion', {
                 <div class="mt-4 px-2 py-2" v-html="data1.intro" 
                     style="border: 1px solid #000;border-radius: 15px;background:#fff;">
                 </div>
-                <div class="my-2 p-3 instruct mb-5" style="" v-html="data1.instrucciones"></div>
+                <div class="my-2 p-3 instruct mb-5 text-center" style="" v-html="data1.instrucciones"></div>
             </div>
 
             <div class="row">
@@ -109,8 +111,10 @@ Vue.component('priorizacion', {
                     </div>
                 </div>
                 <div class="col-sm-9">
-                    <span class="prior-text">{{data1.dato.nombre}}</span>
-                    <div style="font-style:italic" class="desc1" v-html="data1.dato.descripcion"></div>
+                    <div class="" style="border:1px solid #000">
+                        <div class="prior-text px-2">{{data1.dato.nombre}}</div>
+                        <div style="font-style:italic" class="desc1" v-html="data1.dato.descripcion"></div>
+                    </div>
                 </div>
             </div>
             <div class="row">

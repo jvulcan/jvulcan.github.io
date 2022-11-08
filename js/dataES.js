@@ -7,7 +7,7 @@ const estructura =
         <li>Este ejercicio busca averiguar la proporción de aporte individual de cada componente a la madurez global del dominio de desempeño a evaluar.</li></ul>",
         intro_estrategia: "<ul style='list-style:disc'><li>El propósito de la encuesta es determinar el nivel de impacto que tiene cada uno de los componentes sobre <b>dimensiones genéricas de una estrategia organizacional</b>. (<b>Rentabilidad, Eficiencia & Productividad, Personas, Clientes</b>)</li>\
         <li>Este ejercicio busca averiguar cuál es el impacto que tendría el <b><u>resultado esperado del componente</u></b> en cada dimensión estratégica.</li></ul>",
-        estrategia: "A continuación evalué si hay impacto del componente en cada una de las dimensiones estratégicas, eligiendo entre las alternativas; “<b><u><i>muy bajo</b></u></i>”, “<b><u><i>bajo</b></u></i>”, “<b><u><i>medio</b></u></i>”, “<b><u><i>alto</b></u></i>”, “<b><u><i>muy alto</b></u></i>” "
+        estrategia: "A continuación evalué si hay impacto del componente en cada una de las dimensiones estratégicas, eligiendo entre las alternativas; <br>“<b><u><i>muy bajo</b></u></i>”, “<b><u><i>bajo</b></u></i>”, “<b><u><i>medio</b></u></i>”, “<b><u><i>alto</b></u></i>”, “<b><u><i>muy alto</b></u></i>” "
     },
     escala: [
         { nombre: "Muy bajo", valor: 0.1 },

@@ -536,9 +536,9 @@ input[type='radio']:checked + label:before, input[type='radio']:checked + .label
     left:-10px;
 }
 .desc1{
-    background:rgba(0,0,255,0.05);
+    /*background:rgba(0,0,255,0.05);
     border:1px solid #000;
-    border-radius: 10px;
+    border-radius: 10px;*/
     padding:5px;
     color:#333 !important;
 }
