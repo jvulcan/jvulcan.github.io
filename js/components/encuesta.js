@@ -72,8 +72,8 @@ Vue.component('encuesta', {
                 const element = globalThis.app.priorizaciones[i];
                 if (element.tipo == 'prop')
                 {
-                    if (!element.visitado)
-                        return false;
+                    //if (!element.visitado)
+                        //return false;
                 }
                 else if (element.tipo == 'escala')
                 {

@@ -179,8 +179,8 @@ Vue.component('estructura', {
         },
         EstaIncompleto(elemId){
             var el = this.tareas.find(ev => ev.dato.id == elemId);
-            if (!el.visitado)
-                return false;
+            //if (!el.visitado)
+                //return false;
 
             if (el.tipo == 'escala')
             {
@@ -190,6 +190,7 @@ Vue.component('estructura', {
                         return true;
                 }
             }
+            else return true;
             return false;
             //return el != null && el.respuesta.completo == false;
         },

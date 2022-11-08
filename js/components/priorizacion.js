@@ -131,40 +131,10 @@ Vue.component('priorizacion', {
                                 
                             </td>
                             <td style="width:25%">
-                                <!--
-                                <table style="width:100%;height:100%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <img src="img/Imagen4.png" style="width:40px;height:40px;"/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="img/Imagen4.png" style="width:40px;height:40px;"/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="img/Imagen4.png" style="width:40px;height:40px;"/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="img/Imagen4.png" style="width:40px;height:40px;"/>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                -->
                                 <img src="img/Imagen5.png" style="height:100%;"/>
                             </td>
                         </tr>
                     </table>
-                    
-                    <!--<div style="text-align:center;vertical-align:middle;display:table-cell;height:95%;width:90%;;color:white;">
-                        
-                    </div>-->
                 </div>
                 <div class="col-md-9">
                     <div v-for="cmp,i of data1.opciones" class="row mt-2">
