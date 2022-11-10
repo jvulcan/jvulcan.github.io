@@ -117,7 +117,7 @@ const estructura =
                 },
                 { 
                     id:"M12", 
-                    nombre:"Se elabora información evolutiva para obtener los entregables y asegutrar los resultados para los cuales se emprendió el proyecto", 
+                    nombre:"Se elabora información evolutiva para obtener los entregables y asegurar los resultados para los cuales se emprendió el proyecto", 
                     descripcion:"<b>Resultado esperado del componente:</b> La información inicial sobre entregables y requisitos en comparación con la información obtenida en un punto de avance se muestra sin mayores cambios lo que demuestra una elaboración inicial apropiada.<br>\
                     La información que se va obteniendo en comparación con el caso de negocio sigue alineada, indicando que el proyecto producirá los entregables y los resultados para los cuales se emprendió.",
                     num:3
