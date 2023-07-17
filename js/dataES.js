@@ -10,6 +10,7 @@ const estructura =
         estrategia: "A continuación evalué si hay impacto del componente en cada una de las dimensiones estratégicas, eligiendo entre las alternativas; <br>“<b><u><i>muy bajo</b></u></i>”, “<b><u><i>bajo</b></u></i>”, “<b><u><i>medio</b></u></i>”, “<b><u><i>alto</b></u></i>”, “<b><u><i>muy alto</b></u></i>” "
     },
     escala: [
+        { nombre: "No Aplica", valor: 0.0 },
         { nombre: "Muy bajo", valor: 0.1 },
         { nombre: "Bajo", valor: 0.15 },
         { nombre: "Medio", valor: 0.3 },
